@@ -17,10 +17,8 @@ class iwallet
         CURLOPT_SSL_VERIFYPEER => false
     ); // ceolnw
     public $api_gateway = "https://3ird.online/donate/";
-    public function __construct($phoneNumber = null, $Passkey = null)
+    public function __construct()
     {
-        $this->phoneNumber = $phoneNumber;
-        $this->Passkey = $Passkey;
     }
     public function request($api_path, $headers = array() , $data = null)
     {
