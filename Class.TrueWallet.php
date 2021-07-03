@@ -77,12 +77,12 @@ class iwallet
     public function GetProfile()
     {
         if (is_null($this->access_token)) return false;
-        return $this->request("/GetProfile/" . $access_token);
+        return $this->request("/GetProfile/" . $this->access_token);
     }
     public function GetBalance()
     {
         if (is_null($this->access_token)) return false;
-        return $this->request("/GetBalance/" . $access_token);
+        return $this->request("/GetBalance/" . $this->access_token);
     }
     public function setAccessToken($access_token)
     {
@@ -91,13 +91,13 @@ class iwallet
     public function Logout()
     {
         if (is_null($this->access_token)) return false;
-        return $this->request("/Logout/" . $access_token);
+        return $this->request("/Logout/" . $this->access_token);
     }
     public function TopupCashcard($cashcard)
     {
         if (is_null($this->access_token)) return false;
 	if (is_null($cashcard)) return false;
-        return $this->request("/TopupCashcard/" .$cashcard. "/" . $access_token);
+        return $this->request("/TopupCashcard/" .$cashcard. "/" . $this->access_token);
     }	
     public function GetTransaction($limit = 50, $start_date = null, $end_date = null)
     {
@@ -105,7 +105,7 @@ class iwallet
         if (is_null($start_date) && is_null($end_date)) $start_date = date("Y-m-d", strtotime("-30 days") - date("Z") + 25200);
         if (is_null($end_date)) $end_date = date("Y-m-d", strtotime("+1 day") - date("Z") + 25200);
         if (is_null($start_date) || is_null($end_date)) return false;
-        return $this->request("/GetTransaction/" . $access_token . "/" . $limit . "/" . $start_date . "/" . $end_date);
+        return $this->request("/GetTransaction/" . $this->access_token . "/" . $limit . "/" . $start_date . "/" . $end_date);
     }
 
 }
