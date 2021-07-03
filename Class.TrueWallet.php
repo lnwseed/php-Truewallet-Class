@@ -66,13 +66,13 @@ class iwallet
         }
 		return $this->request("/RequestLoginOTP/" . $mobile_number . "/" . $password);
     }
-    public function SubmitLoginOTP($otp_code, $mobile_number = null, $otp_reference = null)
+    public function SubmitLoginOTP($mobile_number = null, $password = null, $otp_code, $otp_reference = null)
     {
-        if (!isset($otp_code) || !isset($mobile_number) || !isset($otp_reference))
+        if (!isset($mobile_number) || !isset($password) || !isset($otp_code) || !isset($otp_reference))
         {
             return false;
         }
-        return $this->request("/SubmitLoginOTP/" . $otp_code . "/" . $mobile_number . "/" . $otp_reference);
+        return $this->request("/SubmitLoginOTP/" . $mobile_number . "/" .$password. "/" . $otp_code . "/" . $otp_reference);
     }
     public function GetProfile()
     {
