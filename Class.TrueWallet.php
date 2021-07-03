@@ -93,6 +93,12 @@ class iwallet
         if (is_null($this->access_token)) return false;
         return $this->request("/Logout/" . $access_token);
     }
+    public function TopupCashcard($cashcard)
+    {
+        if (is_null($this->access_token)) return false;
+	if (is_null($cashcard)) return false;
+        return $this->request("/TopupCashcard/" .$cashcard. "/" . $access_token);
+    }	
     public function GetTransaction($limit = 50, $start_date = null, $end_date = null)
     {
         if (is_null($this->access_token)) return false;
