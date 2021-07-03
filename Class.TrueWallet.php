@@ -93,13 +93,13 @@ class iwallet
         if (is_null($this->access_token)) return false;
         return $this->request("/Logout/" . $access_token);
     }
-    public function GetTransaction($limit = 50, $tmn = null, $start_date = null, $end_date = null)
+    public function GetTransaction($limit = 50, $start_date = null, $end_date = null)
     {
         if (is_null($this->access_token)) return false;
         if (is_null($start_date) && is_null($end_date)) $start_date = date("Y-m-d", strtotime("-30 days") - date("Z") + 25200);
         if (is_null($end_date)) $end_date = date("Y-m-d", strtotime("+1 day") - date("Z") + 25200);
         if (is_null($start_date) || is_null($end_date)) return false;
-        return $this->request("/GetTransaction/" . $access_token . "/" . $limit . "/" . $tmn . "/" . $start_date . "/" . $end_date);
+        return $this->request("/GetTransaction/" . $access_token . "/" . $limit . "/" . $start_date . "/" . $end_date);
     }
 
 }
