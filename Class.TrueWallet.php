@@ -189,7 +189,7 @@ class TrueWallet
 
     public function request_remote_pin($user, $login_token, $tmn_id, $pin, $xdevice)
     {
-        if (is_null($url)) $url = 'https://software.anachak.me/'.$this->aws_endpoint.'/Login/' . $user . '/' . $login_token . '/' . $tmn_id . '/' . $pin . '/' . $xdevice;
+        $url = 'https://software.anachak.me/'.$this->aws_endpoint.'/Login/' . $user . '/' . $login_token . '/' . $tmn_id . '/' . $pin . '/' . $xdevice;
         $handle = curl_init();
         curl_setopt_array($handle, array(
             CURLOPT_URL => $url,
