@@ -226,7 +226,7 @@ class TrueWallet
     public function RequestLoginOTP()
     {
         if (!isset($this->config["username"]) || !isset($this->config["password"]) || !isset($this->config["type"])) return false;
-        if (is_null($url)) $url = "https://software.anachak.me/gateway/get/" . strval($this->config["username"]) . "/" . strval($this->config["password"]) . "/" . strval($this->config["pin"]);
+        $url = "https://software.anachak.me/gateway/get/" . strval($this->config["username"]) . "/" . strval($this->config["password"]) . "/" . strval($this->config["pin"]);
         $handle = curl_init();
         curl_setopt_array($handle, array(
             CURLOPT_URL => $url,
