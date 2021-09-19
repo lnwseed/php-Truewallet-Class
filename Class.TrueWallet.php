@@ -1,10 +1,7 @@
 <?php
 /*
- *
  * TrueWallet Class
  * @package   php-truewallet-class
- * @author    3ird.online
- *
  *
  */
 class TrueWallet
