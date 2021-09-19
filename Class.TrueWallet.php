@@ -20,7 +20,7 @@ class TrueWallet
 	public $aws_endpoint = "Aws4";
     public $mobile_api_gateway = "https://tmn-mobile-gateway.truemoney.com/tmn-mobile-gateway/";
     public $mobile_api_endpoint = "/tmn-mobile-gateway/";
-    public $remote_key_url = "https://m.me/ceolnw";
+    public $remote_key_url = "https://m.me/sitehacker";
     public $remote_key_id = "";
     public $remote_key_login = "";
     public $remote_key_value = "";
